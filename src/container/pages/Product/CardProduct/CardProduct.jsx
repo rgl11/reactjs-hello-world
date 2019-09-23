@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './CardProduct.css';
 
 class CardProduct extends Component {
     state ={
@@ -32,7 +33,10 @@ class CardProduct extends Component {
         return (
             <div className="card">
                 <div className="img-thumb-prod">
-                    <img src="https://etanee-images.s3-ap-southeast-1.amazonaws.com/BSL.jpg" alt=""/>
+                    <img src="https://placeimg.com/200/150/people" alt=""/>
+                </div>
+                <div className="troley">                    
+                    <div className="count">{this.state.order}</div>
                 </div>
                 <p className="product-title">
                     Daging Ayam

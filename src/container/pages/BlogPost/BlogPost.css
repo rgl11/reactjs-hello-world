@@ -34,6 +34,7 @@ p.title{
     margin: 0px;
     margin-top: 10px;
     color: #2d2d2d;
+    cursor: pointer;
 }
 p.desc{
     font-size: 16px;

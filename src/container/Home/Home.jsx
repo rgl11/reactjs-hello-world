@@ -1,38 +1,37 @@
-import React, {Component} from 'react';
-import YouTubeComp from '../../component/YouTubeComp/YoutubeComp';
-import Product from '../Product/Product';
-import BlogPost from '../BlogPost/BlogPost';
+//libraries
+import React, {Component, Fragment} from 'react';
+import {BrowserRouter, Route, Link} from 'react-router-dom';
+
+//page
+import Product from '../pages/Product/Product';
+import BlogPost from '../pages/BlogPost/BlogPost';
+import YouTubeCompPage from '../pages/YouTubeCompPage/YouTubeCompPage';
+import DetailPost from '../pages/BlogPost/DetailPost/DetailPost';
+
 
 class Home extends Component{
+    state = {
+        showComponent: true
+    }
     render(){
         return(
-            <div>
-                {/* <p>Youtube Component</p>
-                <hr/>
-                <YouTubeComp 
-                    time="7.12"  
-                    title="Judul satu lorem"/>
-                <YouTubeComp 
-                    time="9.90" 
-                    title="Judul dua lorem"/>
-                <YouTubeComp 
-                    time="6.90" 
-                    title="Judul tiga lorem"/>
-                <YouTubeComp 
-                    time="9.10" 
-                    title="Judul empat lorem"/>
-                <YouTubeComp/> */}
-                <p>BlogPost</p>
-                <hr/>
-                <BlogPost/>
-            </div>
+            <BrowserRouter>
+                <Fragment>
+                    <div>
+                        <Link to='/'> BlogPost </Link>
+                        <Link to='/product'> Product </Link>
+                        <Link to='/youtube-component'> YouTubeCompPage </Link>
+                    </div>
+                    <Route path="/" exact component={BlogPost} />
+                    <Route path="/detail-post/:postID" component={DetailPost} />
+                    <Route path="/product" component={Product} /> 
+                    <Route path="/youtube-component" component={YouTubeCompPage} /> 
+                </Fragment>
+            </BrowserRouter>
         )
     }
 }
 
-YouTubeComp.defaultProps = {
-    time: '00.00',
-    title: 'Title Here'
-}
+
 
 export default Home;

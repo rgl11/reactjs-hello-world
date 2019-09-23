@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import './BlogPost.css';
-import Post from '../../component/Post/Post';
+import Post from '../../../component/Post/Post';
 import axios from 'axios';
 
 class BlogPost extends Component {
@@ -55,6 +55,10 @@ class BlogPost extends Component {
         this.postDataToAPI();
         
     }
+
+    handleDetail = (id) => {
+        this.props.history.push(`/detail-post/${id}`);
+    }
     
     componentDidMount(){
         // fetch('https://jsonplaceholder.typicode.com/posts')
@@ -72,7 +76,8 @@ class BlogPost extends Component {
     render() {
         return (
             <Fragment>
-                <p>BlogPost</p>   
+                <p>BlogPost</p>     
+                <hr/>
                 <div className="form-add-post">
                     <label htmlFor="title">Title</label>
                     <input type="text" name="title" placeholder="add text" onChange={this.handleFormChange}/>
@@ -83,7 +88,7 @@ class BlogPost extends Component {
                 <div className="wrapContent">                     
                     {
                         this.state.post.map(post =>{
-                            return <Post key={post.id} data={post} remove={this.handleRemove}/>     
+                            return <Post key={post.id} data={post} remove={this.handleRemove} goDetail={this.handleDetail}/>     
                         })
                     }
                                
