@@ -22,20 +22,6 @@ const rootReducer = (state = initialState, action) =>{
         default:
             return state;
     }
-
-    // if(action.type === 'ADD_AGE'){
-    //     return{
-    //         ...state,
-    //         age: state.age + 1
-    //     }    
-    // }
-    // if(action.type === 'CHANGE_VALUE'){
-    //     return{
-    //         ...state,
-    //         value: state.value + action.newValue
-    //     }
-    // }
-    // return state;
 }
 
 //store
