@@ -17,6 +17,9 @@ class Product extends Component {
         return (
             <Fragment>          
                 <p>Product</p>     
+                <div className="troley">                    
+                    <div className="count">{this.state.order}</div>
+                </div>
                 <hr/>
                 <CardProduct onCounterChange={(value) => this.handleCounterChange(value)} />
             </Fragment>
