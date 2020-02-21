@@ -17,7 +17,7 @@ class BlogPost extends Component {
     getPostAPI = () => {
         axios.get('http://localhost:3004/posts?_sort=id&_order=desc')
         .then((result)=>{
-            //console.log(result.data);
+            console.log(result.data);
             this.setState({
                 post:result.data
             })
@@ -61,7 +61,8 @@ class BlogPost extends Component {
     }
     
     componentDidMount(){
-        // fetch('https://jsonplaceholder.typicode.com/posts')
+        // // fetch('https://jsonplaceholder.typicode.com/posts')
+        // fetch('http://localhost:3004/posts')
         // .then(response => response.json())
         // .then(json => {
         //     console.log(json);
